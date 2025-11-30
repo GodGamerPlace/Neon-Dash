@@ -2,7 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#050510" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Neon Dash" />
     <title>Neon Dash</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -10,8 +14,13 @@
       body {
         margin: 0;
         overflow: hidden;
-        background-color: #050505;
+        background-color: #050510;
         font-family: 'Orbitron', sans-serif;
+        touch-action: none; /* Prevent default touch actions like pull-to-refresh */
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+        -webkit-tap-highlight-color: transparent;
       }
       canvas {
         display: block;

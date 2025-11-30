@@ -32,9 +32,9 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-screen bg-neutral-950 flex items-center justify-center overflow-hidden">
-      {/* Container for Game */}
-      <div className="relative w-full max-w-[1000px] aspect-video rounded-xl overflow-hidden shadow-[0_0_80px_rgba(0,0,0,0.8)] border border-white/10">
+    <div className="w-full h-[100dvh] bg-neutral-950 flex items-center justify-center overflow-hidden overscroll-none">
+      {/* Container for Game - scales with aspect ratio */}
+      <div className="relative w-full md:max-w-[1000px] aspect-video md:rounded-xl overflow-hidden md:shadow-[0_0_80px_rgba(0,0,0,0.8)] md:border border-white/10 bg-black">
         
         <GameCanvas 
           key={gameId} 
@@ -62,9 +62,11 @@ const App: React.FC = () => {
         
       </div>
 
-      {/* Background decoration */}
+      {/* Background decoration - visible only on larger screens */}
       <div className="fixed inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-900 via-black to-black"></div>
-      <div className={`fixed top-0 left-0 w-full h-1 bg-gradient-to-r transition-colors duration-500 ${
+      
+      {/* Top progress bar ambient glow */}
+      <div className={`fixed top-0 left-0 w-full h-1 bg-gradient-to-r transition-colors duration-500 opacity-50 md:opacity-100 ${
         difficulty === Difficulty.DEMON ? 'from-red-600 via-orange-600 to-yellow-600' : 
         difficulty === Difficulty.EXTREME ? 'from-purple-600 via-pink-600 to-red-600' :
         'from-cyan-500 via-purple-500 to-pink-500'
